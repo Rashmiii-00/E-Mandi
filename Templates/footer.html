@@ -1,0 +1,175 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!---<link rel="stylesheet" type="text/css" href="{% static 'style/footer.css' %}">--->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+
+    <style>
+
+        body{
+    /*background-color: black ;*/
+    font-family: 'Times New Roman', Times, serif;
+  }
+  .logo1{
+    /*  margin-left: auto;
+      margin-right: auto; */
+      display: block;
+      position: relative;
+      bottom: 44%;
+      left: 48%;
+      margin: 0;
+      padding: 0;
+      border-radius: 20%;
+
+  }
+  .one{
+    color: yellowgreen;
+    position: relative;
+    left: 38%;
+    bottom: 30%;
+    font-size: 60px;
+    letter-spacing: 7px;
+    font-weight: 1200;
+    font-family: 'Times New Roman', Times, serif;
+
+  }
+  .two{
+    color: yellowgreen;
+    position: relative;
+    left: 55%;
+    bottom: 27%;
+    font-size: 25px;
+    word-spacing: 1px;
+    font-weight: bolder;
+  }
+  .info1{
+      color: yellowgreen;
+      position: relative;
+      bottom: 9%;
+      left: 38%;
+      font-size: 20px;
+
+  }
+  .info2{
+    color: yellowgreen;
+    position: relative;
+    bottom: 2%;
+    left: 38%;
+    font-size: 20px;
+
+}
+  .footer{
+      align-items: center;
+      margin-top:2500px;
+      background-color: black;
+      border-radius: 30px;
+      border: 5px solid green;
+      padding:20px;
+      position:relative;
+
+
+  }
+  .three{
+      color: yellowgreen;
+      position: relative;
+      bottom: 15%;
+      left: 32%;
+      font-size: 40px;
+  }
+
+.thumbnail{
+}
+
+  .topnav
+{
+  border-style:solid;
+  border-width:5px;
+  border-color:green;
+  border-radius:25px;
+  background-color: black;
+  overflow: hidden;
+  margin:25px;
+}
+
+.cart1
+{
+  margin:20px;
+  padding:10px;
+  float: right;
+  text-align:center;
+}
+.active
+{
+  font-family: Impact, Charcoal, sans-serif;
+  margin-top:30px;
+  margin-right:450px;
+  float:right;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  font-family: 'Times New Roman', Times, serif;
+  letter-spacing: 2px;
+}
+
+.thumbnail:hover {
+      transform: scale(1.5);
+}
+.active:hover
+{
+  font-size:30px;
+  background-color:green;
+  color: black;
+}
+
+
+
+.topnav a.active
+{
+  color: white;
+}
+.logo
+{
+margin:20px;
+position:relative;
+}
+    </style>
+
+</head>
+<body>
+<header>
+    <div class="topnav">
+        <a  class="cart1" href="bookPage" target="_self"><img class="thumbnail" src="{% static 'images/img4.jpg'%}" style="width:50px;height:50px;align:center;"></a>
+        <a class="active" href="MINIhtml.html" target="_self">E - MANDI</a>
+        <img class="thumbnail logo" src="{% static 'images/002 LOGO.PNG' %}" style="width:70px;height:70px;">
+      </div>
+</header>
+    {% block content %}
+
+    {% endblock %}
+
+<footer>
+<div class="footer">
+    <div class="logo1">
+        <img  src="{% static 'images/002 LOGO.PNG' %}">
+    </div>
+    
+    <h1 class="one">E - MANDI</h1>
+    <h4 class="two">~ From our pantry to yours</h4>
+        <p class="info1">
+        <i class="fa fa-envelope" style="font-size: 30px;" aria-hidden="true"></i>&emsp;
+        <a href="#" style="color: yellowgreen;">abc@xyz.com</a></p>
+
+    <p class="info2">
+        <i class="fa fa-phone" style="font-size: 30px;" aria-hidden="true"></i>&emsp;
+         9999222550</p>
+    <h2 class="three">Don't forget to buy a staple again!</h2>
+</div>
+</footer>
+</body>
+</html>

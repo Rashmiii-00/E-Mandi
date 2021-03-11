@@ -1,0 +1,33 @@
+
+.cart{
+    padding: 0px;
+    margin: 20px;
+    position: relative;
+    right: -15px;
+    top: -25px;
+
+}
+.cart img{
+    border-radius: 50px;
+    border: 3px solid black;
+}
+.card-style{
+    width:350px;
+    height: 520px;   /* dropdown list should not go  outside the card*/
+    border: 3px solid black;
+    border-radius: 10px;
+    top: 0px;
+    margin: 44px;
+    padding: 10px;
+    
+}
+.option{
+    font-weight: 600;
+}
+
+/*
+.bhajiCard{
+border-radius: 20px;
+border: 2px solid black;
+}
+*/

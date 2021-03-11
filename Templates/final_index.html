@@ -1,0 +1,76 @@
+{% extends 'footer.html' %}
+
+{% block content %}
+
+
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <link rel="stylesheet" type="text/css" href="{% static 'style\final_style.css' %}">
+    <title>Document</title>
+</head>
+<body>
+ {% for item in items %}
+ <form method="post" onsubmit="cnfMsg()" action="/addToCart">
+                      {% csrf_token %}
+
+    <div class="container-fluid">
+      <div class="card card-style float-left">
+          <img src="{{item.img.url}}" class="card-img-top" style="width:325px; height:300px; border-radius:15px;">
+          <div class="card-body">
+            <h5 class="card-title font-weight-bold align-items-center">{{item.name}}</h5>
+            <p class="card-text">₹{{item.price}}/- per {{item.unit}}.</p>
+           <!-- <p class="font-weight-bold">Quantity:</p> -->
+
+           <div class="form-row"> 
+
+              <div class="form-group col-md-6 ">
+                  <label class="font-weight-bold">Quantity<h7>({{item.unit}}s):</h7></label>
+                    <select  class="form-control option" name="qty">
+                      <option class="option" selected>1 </option>
+                      <option class="option">2 </option>
+                      <option class="option">3 </option>
+                      <option class="option">5 </option>
+                      <option class="option">10 </option>
+                    </select>
+                </div>
+
+              <div class="form-group float-right cart">
+                        <input type="text" name="name" value="{{item.name}}" hidden>
+                    <button type="submit">
+                         <img class="cartImg" src="{% static 'images\image4.jpg' %}" width="90px" height="90px" >
+                    </button>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+
+  </div>
+                     </form>
+
+{% endfor %}
+
+
+<script>
+    function cnfMsg(){
+    alert("Product added to cart successfully!");
+    }
+</script>
+
+
+
+
+</body>
+</html>
+
+{% endblock %}

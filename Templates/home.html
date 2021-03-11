@@ -1,0 +1,144 @@
+{% extends 'footer.html' %}
+
+{% block content %}
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.container {
+  float:left;
+  width: 200px;
+ -webkit-transform: translate(5%, 5%);
+  
+}
+
+.pic1{
+ position:absolute;
+float:left;
+left:-10px;
+margin:121px;
+padding:0px;
+}
+
+.pic2{
+ position:absolute;
+float:left;
+left:450px;
+margin:121px;
+padding:0px;
+}
+
+.pic3{
+ position:absolute;
+float:right;
+right:0px;
+margin:121px;
+padding:0px;
+}
+
+
+.image1{
+  
+  display: block;
+  width: 200px;
+  height:200px;
+  border: 2px solid red;
+  border-radius: 25px;
+
+}
+.image2{
+ 
+  display: block;
+  width: 200px;
+  height:200px;
+  border: 2px solid red;
+  border-radius: 25px;
+
+}
+
+.image3{
+   
+  display: block;
+  width: 200px;
+  height:200px;
+  border: 2px solid red;
+  border-radius: 25px;
+
+}
+
+.overlay {
+ 
+  position:absolute;
+  top: 0px;
+  bottom:0;
+  right:0;
+  left:0;
+  height: 200px;
+  width: 200px;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #008CBA;
+  border: 2px solid black;
+  
+  border-radius: 25px;
+
+}
+
+.container:hover .overlay {
+  opacity:1;
+}
+
+.text {
+  color: white;
+  font-size: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+</style>
+</head>
+<body>
+
+
+<div class="container pic1">
+   <a href="vegetables" target="_self">
+  <img src="{% static 'images\vegetable.png' %}" alt="Avatar" class="image1">
+  
+  <div class="overlay">
+    <div class="text">BUY VEGETABLES</div>
+  </div>
+</a>
+</div>
+
+
+<div class="container pic2">
+  <a href="fruits" target="_self">
+  <img src="{% static 'images\fruits.png' %}" alt="Avatar" class="image2">
+ 
+  <div class="overlay">
+    <div class="text">BUY FRUITS</div>
+  </div>
+ </a>
+</div>
+
+
+<div class="container pic3">
+   <a href="cereals" target="_self">
+  <img src="{% static 'images\cereals.png' %}" alt="Avatar" class="image3">
+   
+  <div class="overlay">
+    <div class="text">BUY CEREALS</div>
+  </div>
+ </a>
+</div>
+
+</body>
+</html>
+{% endblock %}

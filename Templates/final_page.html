@@ -1,0 +1,79 @@
+{% extends 'footer.html' %}
+
+{% block content %}
+
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <link rel="stylesheet" type="text/css" href="{% static 'style/last_page.css' %}">
+    <title>Document</title>
+</head>
+<br><br><br><br>
+<center>
+
+    <div class="container-fluid">
+     
+        <p class="cart"><h1>YOUR CART</h1></p>
+        <br><br><br><br>
+      <div class="outer" style="border-radius:15px;">
+          {% for cartItem in cartItems %}
+            {% for item in items %}
+              {% if cartItem.name == item.name %}
+      <div class="card mb-3 card-style" style="min-width: 700px;"> <!--540 was default-->
+        <div class="row no-gutters">
+
+          <div class="col-md-4">
+            <div class="card-body">
+              <br>
+              <h5 class="card-title title">{{cartItem.name}}:</h5>
+              <p class="card-text">x<b>{{cartItem.qty}} &nbsp; {{item.unit}}</b> </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card-body">
+              <br>
+              <p class="card-text"><b>Total</b> = ₹ {{cartItem.price}}*{{cartItem.qty}} </p>
+              <p class="card-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = ₹ {{cartItem.total}}/-
+            </div>
+          </div>
+          <div class="col-md-4">
+            <img src="{{item.img.url}}" class="card-img image" style="width:150px; height: 130px; margin:10px">
+          </div>
+        </div>
+
+    </div>
+          {% endif %}
+            {% endfor %}
+            {% endfor %}
+
+    <!--
+      <p class="order-total">Your order total is: <b>₹ 400.00</b> </p>
+      <div class="btn btn-primary order">Proceed to Buy</div>-->
+          <form action="confirm" onsubmit="cnfmsg('{{total}}')">
+      <div class="btn btn-warning order"><button type="submit" style="border:none; background-color:transparent;"> Pay ₹ {{total}}/- </button></div>
+              </form>
+    </div>
+    </div>
+</center>
+
+<script>
+
+    function cnfmsg(total){
+    alert("Your Order Worth Rs."+ total +" is confirmed.\nThanks for Ordering!! ");
+    }
+
+</script>
+
+</body>
+</html>
+
+{% endblock %}
